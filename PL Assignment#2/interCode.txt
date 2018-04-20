@@ -1,0 +1,13 @@
+begin
+push 1
+push 2
+MINUS
+push 3
+push 4
+MINUS
+MINUS
+push 5
+MINUS
+push 6
+MINUS
+end
