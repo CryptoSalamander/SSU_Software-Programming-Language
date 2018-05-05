@@ -1,0 +1,8 @@
+ADD(x y) (MINUS x(MINUS 0 y))
+EQUAL(x y) (MINUS (MINUS 1(IF (MINUS x y) 1))(IF (MINUS y x) 1))
+POS(x) (IF x 1)
+ZERO(x) (EQUAL x 0)
+BIG(x y) (IF (MINUS x y) 1)
+LESS(x y) (IF (MINUS y x) 1)
+NEG(x) (IF (MINUS 0 x) 1)
+IF/THEN/ELSE(x y z) (ADD (IF x y) (IF (MINUS 1 x) z))
