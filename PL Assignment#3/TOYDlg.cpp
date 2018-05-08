@@ -439,6 +439,18 @@ void CTOYDlg::OnBnClickedButton7()
 				strcpy(test, toyValue("MINUS", postStack->pop(), postStack->pop()));
 				postStack->push(test);
 			}
+			else if (strcmp(tmp, "MOD") == 0) {
+				char test[10] = { 0 };
+				strcpy(test, toyValue("MOD", postStack->pop(), postStack->pop()));
+				postStack->push(test);
+			}
+			else if (strcmp(tmp, "FACTORIAL") == 0) {
+				char test[10] = { 0 };
+				char* c = postStack->pop();
+				strcpy(test, toyValue("FACTORIAL", c, c));
+				postStack->push(test);
+			}
+
 			else if (strcmp(tmp, "end") == 0)
 				;
 			//begin이면 한 행 종료
@@ -729,7 +741,7 @@ void MyToy::lexicalAnalysis(char *input){
 		}
 		else if (tokenType[j] == 4){
 			//op배열, 변수 배열을 만들어서 검사, op면 4 그래도 변수면 5
-			if (strcmp(tokenTable[j], "IF") != 0 && strcmp(tokenTable[j], "MINUS") != 0){
+			if (strcmp(tokenTable[j], "IF") != 0 && strcmp(tokenTable[j], "MINUS") != 0 && strcmp(tokenTable[j], "MOD") != 0 && strcmp(tokenTable[j],"FACTORIAL") != 0) {
 
 				BOOL check = TRUE;
 				//defun에 정의된 함수와 일치여부 검사

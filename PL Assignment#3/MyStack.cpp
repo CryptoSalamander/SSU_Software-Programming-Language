@@ -41,4 +41,20 @@ char* toyValue(char* op, char* operand2, char* operand1){
 		sprintf(tmp, "%d", atoi(operand1) - atoi(operand2));
 		return tmp;
 	}
+	else if (strcmp(op, "MOD") == 0) {
+		char tmp[20] = { 0 };
+		sprintf(tmp, "%d", atoi(operand1) % atoi(operand2));
+		return tmp;
+	}
+	else if (strcmp(op, "FACTORIAL") == 0) {
+		char tmp[20] = { 0 };
+		int i;
+		int result = 1;
+		for (i = atoi(operand1); i > 0; i--)
+		{
+			result *= i;
+		}
+		sprintf(tmp, "%d", result);
+		return tmp;
+	}
 }
