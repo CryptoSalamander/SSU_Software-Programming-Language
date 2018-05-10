@@ -350,7 +350,7 @@ void CTOYDlg::OnBnClickedButton5()
 void CTOYDlg::OnBnClickedButton6()
 {
 	ULONGLONG length;
-	char buff[500] = { 0 };
+	char buff[1000] = { 0 };
 	//파일 불러오기 대화상자
 	CFileDialog dlgaFile(TRUE, _T("txt"), _T("inter*.txt"), OFN_HIDEREADONLY | OFN_FILEMUSTEXIST, NULL);
 	dlgaFile.m_ofn.lpstrFilter = _T("Text File(*.txt)");
@@ -480,7 +480,7 @@ void CTOYDlg::initDefun()
 	// TODO: Add your control notification handler code here
 
 
-	char buff[500] = { 0 };
+	char buff[1000] = { 0 };
 	CFile file;
 	file.Open(_T("defun.txt"), CFile::modeRead);
 	int length = file.GetLength();
@@ -950,7 +950,7 @@ void CTOYDlg::OnBnClickedButton9()
 {
 	// TODO: Add your control notification handler code here
 	ULONGLONG length;
-	char buff[500] = { 0 };
+	char buff[1000] = { 0 };
 
 	//edit control 변수 
 	CEdit *textBox;
