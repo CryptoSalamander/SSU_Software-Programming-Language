@@ -6,3 +6,7 @@ BIG(x y) (IF (MINUS x y) 1)
 LESS(x y) (IF (MINUS y x) 1)
 NEG(x) (IF (MINUS 0 x) 1)
 IF/THEN/ELSE(x y z) (ADD (IF x y) (IF (MINUS 1 x) z))
+
+MUL(x y) (IF/THEN/ELSE x (ADD y (MUL (MINUS x 1) y)) 0)
+FACTORIAL(x) (IF/THEN/ELSE (POS x) (MUL x (FACTORIAL(MINUS x 1))) 1)
+MOD(x y) (IF/THEN/ELSE (MINUS x (ADD y y)) (MOD (MINUS x y) y) (IF/THEN/ELSE (POS (MINUS x y)) (MINUS x y) x))
